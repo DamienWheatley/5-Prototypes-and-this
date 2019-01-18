@@ -104,16 +104,24 @@ const animalCreator = {
 };
 
 function getButton(index) {
-    switch(index) {
-        case 0:
-            return animalCreator.createZebra();
-        case 1:
-            return animalCreator.createChinchilla();
-        case 2:
-            return animalCreator.createLion();
-        case 3:
-            return animalCreator.createFerret();
+    return button = {
+        onClick: function(name){
+            switch(index){
+                case 0: return animalCreator.createZebra(name);
+                case 1: return animalCreator.createChinchilla(name);
+                case 2: return animalCreator.createLion(name);
+                case 3: return animalCreator.createFerret(name);
+            }
+        }
     }
 };
 
 const zebraButton = getButton(0);
+const chinchillaButton = getButton(1);
+const lionButton = getButton(2);
+const ferretButton = getButton(3);
+
+const martyTheZebra = zebraButton.onClick('Marty');
+const cillaTheChinchilla = chinchillaButton.onClick('Cilla');
+const alexTheLion = lionButton.onClick('Alex');
+const marlonTheFerret = ferretButton.onClick('Marlon');
