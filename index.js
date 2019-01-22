@@ -1,11 +1,10 @@
 const animal = {
-    init: function (name, species) {
+    init: function(name, species){
         this.name = name,
         this.species = species,
         this.hunger = 25;
-
     },
-    feed: function () {
+    feed: function(){
         if(this.hunger < 100){
             let that = this;
             this.hunger += 25;
@@ -29,7 +28,7 @@ const animal = {
 
 const zoo = {
     cash: 4000,
-    spend: function (amount){
+    spend: function(amount){
         if (this.cash < amount){
             throw "Not enough money!";
         }
@@ -80,30 +79,26 @@ function feedFerretSmall(that){
 };
 
 const animalCreator = {
-    createAnimal: function(name, speciesName, animalType) {
+    createAnimal: function(name, speciesName, animalType){
         const animal = Object.create(animalType);
         animal.init(name, speciesName);
         return animal;
     },
-
-    createZebra: function(name) {
+    createZebra: function(name){
         return this.createAnimal(name, 'Zebra', herbivore);
     },
-
-    createChinchilla: function(name) {
+    createChinchilla: function(name){
         return this.createAnimal(name, 'Chinchilla', herbivore);
     },
-
-    createLion: function(name) {
+    createLion: function(name){
         return this.createAnimal(name, 'Lion', carnivore);
     },
-
-    createFerret: function(name) {
+    createFerret: function(name){
         return this.createAnimal(name, 'Ferret', carnivore);
     }
 };
 
-function getButton(index) {
+function getButton(index){
     return button = {
         onClick: function(name){
             switch(index){
